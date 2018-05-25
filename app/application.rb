@@ -1,5 +1,4 @@
-class Application
-  extend Item 
+class Application 
 
   def call(env)
     resp = Rack::Response.new
