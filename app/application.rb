@@ -6,11 +6,12 @@ class Application
 
     if req.path.match(/items/)
       if item = @@items.find{|i| i.name}
-      resp.write "#{item.price}"
-      end
+        resp.write "#{item.price}"
+      else
+        resp.write "Item not found"
 
     else
-      resp.write "Item not found"
+      resp.write "Route not found"
       resp.status = 404
     end
 
