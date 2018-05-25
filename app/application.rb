@@ -8,7 +8,7 @@ class Application
       if item = @@items.find{|i| i.name}
         resp.write "#{item.price}"
       end
-      if !@@items.include?(item.name)
+      if item != @@items.find{|i| i.name}
         resp.write "Item not found"
         resp.status = 400
       end
