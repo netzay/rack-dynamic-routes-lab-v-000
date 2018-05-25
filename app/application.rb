@@ -1,4 +1,5 @@
 class Application
+  extend Item 
 
   def call(env)
     resp = Rack::Response.new
@@ -6,7 +7,7 @@ class Application
 
     if req.path.match(/items/)
       if item == @@items.find{|i| i.name}
-        resp.write "#{@@items.price}"
+        resp.write "#{items.price}"
       else
         resp.write "Item not found"
         resp.status = 400
