@@ -7,9 +7,8 @@ class Application
     if req.path.match(/items/)
       if item = @@items.find{|i| i.name}
       resp.write "#{item.price}"
-        
       end
-      
+
     else
       resp.write "Route not found"
       resp.status = 404
